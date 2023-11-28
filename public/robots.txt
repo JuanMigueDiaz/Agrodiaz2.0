@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+<!--ojas de estilo, img archivos de descarga-->
