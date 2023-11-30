@@ -5,13 +5,26 @@ use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\HolaControler;
 
+/*forma larga
+
 Route::get('/', [PageController::class, 'home'])->name('home');
 
 Route::get('blog', [PageController::class, 'blog'])->name('blog');
 
+Route::get('blog/{slug}', [PageController::class, 'post'])->name('post');
 
-    Route::get('blog/{slug}', [PageController::class, 'post'])->name('post');
+*/
 
+//forma corta (lo mismom de atras)
+Route::controller(PageController::class)->group(function(){
+  Route::get('/', 'home')->name('home');
+
+Route::get('blog', 'blog')->name('blog');
+
+Route::get('blog/{slug}', 'post')->name('post');
+
+    
+});
 
 
 
